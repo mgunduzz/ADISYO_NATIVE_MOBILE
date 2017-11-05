@@ -1,0 +1,33 @@
+<ActionBar class="action-bar">
+    <NavigationButton android.systemIcon="ic_menu_back" (tap)="onBackButtonTap()">
+    </NavigationButton>
+    <Label class="action-bar-title" [text]="_table.name" horizontalAlignment="center"></Label>
+    <ActionItem ios.position="right" android.position="right" (tap)="onEditButtonTap()">
+        <Label text="Edit" class="action-item"></Label>
+    </ActionItem>
+</ActionBar>
+
+<GridLayout class="page page-content" *ngIf="_table.id !== undefined">
+    <ScrollView>
+        <Label text="{{_table.name}}"></Label>
+    </ScrollView>
+</GridLayout>
+
+<TabView>
+    <StackLayout *tabItem="{title: 'MENÜ'}">
+        <StackLayout orientation="horizontal" style="height:56;">
+            <Label class="label fa" text="&#xf002;" style="width:56;font-size:25;padding-left:15;padding-top:15;background-color:#f6f6f6;"></Label>
+            <TextField class="input input-border" id="firstTextFieldId" hint="Kategori veya yemek ara" text="" style="width:100%;background-color:#f6f6f6"></TextField>
+        </StackLayout>
+
+        <StackLayout orientation="vertical" style="padding:15">
+            <Label class="label fa" text="&#xf0c9; Tüm Kategoriler" style="width:100%;"></Label>
+
+
+        </StackLayout>
+
+
+    </StackLayout>
+
+
+</TabView>

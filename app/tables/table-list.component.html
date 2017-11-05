@@ -1,0 +1,32 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Masalar"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout class="page p-15">
+        <!-- <GridLayout rows="*" columns="*,*">
+
+            <GridLayout class="p-15 m-r-5" row="0" col="0" rows="*" columns="*,*" borderColor="#26000000" borderWidth="1" borderRadius="2">
+                <label row="0" col="0" text="Masalar 1"></label>
+                <label class="pull-right" row="0" col="1" text="*"></label>
+            </GridLayout>
+
+            <GridLayout class="p-15 m-l-5" row="0" col="1" rows="*" columns="*,*" borderColor="#26000000" borderWidth="1" borderRadius="2">
+                <label row="0" col="0" text="Masalar 2"></label>
+                <label class="pull-right" row="0" col="1" text="*"></label>
+            </GridLayout>
+
+
+        </GridLayout> -->
+
+        <WrapLayout class="table-list" orientation="horizontal">
+            <StackLayout orientation="horizontal" (tap)="onTableItemTap(table)" *ngFor="let table of tables" class="p-15 m-5 table-item">
+                <label class="table-name" text="{{ table.name }}" style="width:70%; "></label>
+                <label class="status status-{{ table.status }}" text="*"></label>
+            </StackLayout>
+        </WrapLayout>
+
+    </StackLayout>
+
+
+</ScrollView>
