@@ -46,9 +46,9 @@ export class TableListComponent implements OnInit {
         this._tableService.load().subscribe((tables) => {
             this.tables = tables;
 
-            setTimeout(() => {
-                this.onTableItemTap({ id: 0, name: "", status: 0 });
-            }, 10);
+            // setTimeout(() => {
+            //     this.onTableItemTap({ id: 0, name: "", status: 0 });
+            // }, 10);
         });
     }
 }

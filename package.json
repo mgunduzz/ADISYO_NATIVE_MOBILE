@@ -5,8 +5,11 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.adisyoNativeMobile",
+    "tns-ios": {
+      "version": "3.4.0-2017-10-26-1"
+    },
     "tns-android": {
-      "version": "3.2.0"
+      "version": "3.3.0"
     }
   },
   "scripts": {
@@ -23,12 +26,13 @@
     "@angular/router": "4.2.5",
     "nativescript-angular": "4.2.0",
     "nativescript-imagepicker": "3.0.7",
-    "nativescript-plugin-firebase": "4.1.1",
     "nativescript-pro-ui": "3.1.4",
     "nativescript-theme-core": "1.0.4",
+    "nativescript-toast": "^1.4.6",
+    "nativescript-toasty": "^1.1.5",
     "reflect-metadata": "0.1.10",
     "rxjs": "5.4.3",
-    "tns-core-modules": "3.2.0",
+    "tns-core-modules": "^3.3.0",
     "zone.js": "0.8.17"
   },
   "devDependencies": {

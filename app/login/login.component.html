@@ -4,8 +4,8 @@
 <ScrollView>
     <StackLayout class="page p-t-15" style="margin-top: 175;">
         <TextField class="m-t-10 m-b-10 m-l-15 m-r-15" hint="E-Mail veya Cep Telefonu" keyboardType="email" autocorrect="false" autocapitalization="none"
-            [(ngModel)]="email"></TextField>
-        <TextField class="m-t-10 m-b-10 m-l-15 m-r-15" hint="Şifre" secure="true" autocorrect="false" autocapitalization="none" [(ngModel)]="password"></TextField>
+            [(ngModel)]="_email"></TextField>
+        <TextField class="m-t-10 m-b-10 m-l-15 m-r-15" hint="Şifre" secure="true" autocorrect="false" autocapitalization="none" [(ngModel)]="_password"></TextField>
         <Button class="btn btn-primary btn-adisyo-primary" text="GİRİŞ YAP" (tap)="onSigninButtonTap()"></Button>
 
         <GridLayout rows="*" columns="*,*">

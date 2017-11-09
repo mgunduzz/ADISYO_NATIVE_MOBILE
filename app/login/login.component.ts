@@ -1,12 +1,18 @@
-import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-
-/* ***********************************************************
-* Before you can navigate to this page from your app, you need to reference this page's module in the
-* global app router module. Add the following object to the global array of routes:
-* { path: "login", loadChildren: "./login/login.module#LoginModule" }
-* Note that this simply points the path to the page module file. If you move the page, you need to update the route too.
-*************************************************************/
+import { Router } from "@angular/router";
+import {
+    clear,
+    getBoolean,
+    getNumber,
+    getString,
+    hasKey,
+    remove,
+    setBoolean,
+    setNumber,
+    setString
+} from "application-settings";
+import { Toasty } from "nativescript-toasty";
+import { LoginService } from "./shared/login.service";
 
 @Component({
     selector: "Login",
@@ -14,26 +20,41 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./login.component.html"
 })
 export class LoginComponent implements OnInit {
-    email: string;
-    password: string;
+    private _email: string;
+    private _password: string;
 
-    constructor(private router: Router) {
+    constructor(
+        private _router: Router,
+        private _loginService: LoginService
+    ) {
         /* ***********************************************************
         * Use the constructor to inject app services that you need in this component.
         *************************************************************/
     }
 
     ngOnInit(): void {
-        /* ***********************************************************
-        * Use the "ngOnInit" handler to initialize data for this component.
-        *************************************************************/
+        this._email = "asd@asd.com";
+        this._password = "asd123";
+
+        const isLogin: boolean = this._loginService.checkUserLogin();
+        if (isLogin) {
+            this._loginService.doLogin();
+        }
     }
 
     onSigninButtonTap(): void {
-        const email = this.email;
-        const password = this.password;
+        const email = this._email;
+        const password = this._password;
 
-        this.router.navigate(["/tables"]);
+        setString("email", email);
+        setString("password", password);
+
+        if (email === "asd@asd.com" && password === "asd123") {
+            this._router.navigate(["/tables"]);
+        } else {
+            const toast = new Toasty("Kullanıcı adı veya şifre hatalı");
+            toast.show();
+        }
     }
 
     onForgotPasswordTap(): void {
