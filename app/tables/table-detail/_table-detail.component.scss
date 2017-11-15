@@ -93,3 +93,40 @@ $left-space: 15;
         }
     }
 }
+
+.basket-order {
+    @include adisyo-border('all', 0.1, solid, rgba(0, 0, 0, 0.50));
+    background-color: #f7f7f8;
+    .basket-order-list {
+        .basket-order-item {
+            @include adisyo-border('all', 0.1, solid, rgba(0, 0, 0, 0.50));
+        }
+        .basket-order-item-name {
+            @include adisyo-border('bottom', 0.1, solid, rgba(0, 0, 0, 0.50));
+            height: 60;
+            padding: 20;
+        }
+        .basket-order-item-detail {
+            height: 60;
+            padding: 20;
+            .quantity-change {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.order-process {
+    .process {
+        text-align: center;
+        vertical-align: center;
+        color: white;
+        padding: 30 20;
+    }
+    .process.pay {
+        background-color: #00c853;
+    }
+    .process.save {
+        background-color: #ff9800;
+    }
+}

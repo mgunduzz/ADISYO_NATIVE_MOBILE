@@ -13,7 +13,7 @@
     </ScrollView>
 </GridLayout>
 
-<TabView>
+<TabView selectedIndex="1">
     <StackLayout *tabItem="{title: 'MENÜ'}">
         <ScrollView>
             <StackLayout orientation="vertical">
@@ -81,5 +81,80 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: '24 - ADİSYON'}">
+
+        <GridLayout rows="*,80,75" columns="*">
+            <ScrollView dock="top" row="0" col="0" class="basket-order">
+                <StackLayout orientation="vertical" class="basket-order-list">
+                    <StackLayout orientation="vertical" class="basket-order-item">
+                        <GridLayout class="basket-order-item-name" rows="*" columns="*,20">
+                            <label row="0" col="0" text="KIZARMIŞ ET MENÜSÜ" style="font-weight: bold;"></label>
+                            <Label row="0" col="1" class="fa" text="&#xf1f8;"></Label>
+                        </GridLayout>
+
+                        <GridLayout class="basket-order-item-detail" rows="*" columns="*,*,*,*">
+                            <label class="w-s-normal quantity-change" row="0" col="0">
+                                <FormattedString>
+                                    <Span class="fa" text="&#xf056;"></Span>
+                                    <Span text=" 12 "></Span>
+                                    <Span class="fa" text="&#xf055;"></Span>
+                                </FormattedString>
+                            </label>
+                            <label row="0" col="1" text="120,00"></label>
+                            <label row="0" col="2" text="Yarım P."></label>
+                            <label row="0" col="3" text="1440.00TL" textAlignment="right"></label>
+                        </GridLayout>
+
+                    </StackLayout>
+                    <StackLayout orientation="vertical" class="basket-order-item">
+                        <GridLayout class="basket-order-item-name" rows="*" columns="*,20">
+                            <label row="0" col="0" text="KIZARMIŞ ET MENÜSÜ" style="font-weight: bold;"></label>
+                            <Label row="0" col="1" class="fa" text="&#xf1f8;"></Label>
+                        </GridLayout>
+
+                        <GridLayout class="basket-order-item-detail" rows="*" columns="*,*,*,*">
+                            <label class="w-s-normal quantity-change" row="0" col="0">
+                                <FormattedString>
+                                    <Span class="fa" text="&#xf056;"></Span>
+                                    <Span text=" 12 "></Span>
+                                    <Span class="fa" text="&#xf055;"></Span>
+                                </FormattedString>
+                            </label>
+                            <label row="0" col="1" text="120,00"></label>
+                            <label row="0" col="2" text="Yarım P."></label>
+                            <label row="0" col="3" text="1440.00TL" textAlignment="right"></label>
+                        </GridLayout>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+
+            <GridLayout row="1" col="0" rows="*" columns="*,*,*" style="padding: 20;">
+                <StackLayout row="0" col="0" orientation="vertical" horizontalAlignment="left" verticalAlignment="center">
+                    <label text="İNDİRİM"></label>
+                    <label text="100,00TL"></label>
+                </StackLayout>
+                <StackLayout row="0" col="1" orientation="vertical" horizontalAlignment="center">
+                    <label text="TAHSİL EDİLEN"></label>
+                    <label text="1340,00TL"></label>
+                </StackLayout>
+                <StackLayout row="0" col="2" orientation="vertical" horizontalAlignment="right">
+                    <label text="TOPLAM"></label>
+                    <label text="1440,00TL"></label>
+                </StackLayout>
+            </GridLayout>
+
+
+
+            <GridLayout row="2" col="0" rows="*" columns="*, *" class="order-process">
+                <Label class="fa process pay" row="0" col="0" text="&#xf283; SİPARİŞ ÖDEME"></Label>
+                <Label class="fa process save" row="0" col="1" text="&#xf00c; SİPARİŞ KAYIT"></Label>
+            </GridLayout>
+
+        </GridLayout>
+
     </StackLayout>
 </TabView>
