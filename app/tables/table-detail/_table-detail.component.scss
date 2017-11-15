@@ -116,6 +116,18 @@ $left-space: 15;
     }
 }
 
+.payment-details {
+    padding: 20;
+    .header {
+        font-weight: bold;
+        font-size: 12;
+    }
+
+    .value {
+        font-size: 16;
+    }
+}
+
 .order-process {
     .process {
         text-align: center;
