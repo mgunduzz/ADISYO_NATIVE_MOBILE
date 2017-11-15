@@ -1,0 +1,36 @@
+import { ProductModel } from "./product.model";
+export const PRODUCTS: Array<ProductModel> = [
+    {
+        name: "DÜRÜM2",
+        code: null,
+        description: null,
+        picturePath: null,
+        categoryId: 580,
+        taxRate: 18,
+        defaultProductUnitId: null,
+        kitchenGroupId: 213,
+        isFree: false,
+        isStockFollow: true,
+        foodDeliveryId: "916e113bbf5388d1681eb315c8f971fe",
+        isUseCompositeProduct: null,
+        isProductSalable: true,
+        isBeverage: false,
+        categoryName: null,
+        userId: 0,
+        restaurantId: 5,
+        customerId: 0,
+        id: 1947,
+        rowVersion: "AAAAAACR5BI=",
+        guid: "3edf873f-c4ca-42d9-97bc-e3c762a34903",
+        isActive: true,
+        insertDate: "2016-11-30T15:34:45.9Z",
+        updateDate: "2017-11-11T05:58:18.87Z",
+        insertUserId: 8,
+        updateUserId: 8,
+        offsetMinute: 0,
+        objectState: 1,
+        isError: false,
+        errorMessage: null,
+        errorTitle: null
+    }
+];

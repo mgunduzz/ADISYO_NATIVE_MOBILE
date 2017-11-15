@@ -1,6 +1,7 @@
 // Start custom common variables
 @import '../../app-variables';
 // End custom common variables
+$left-space: 15;
 .category-list {
     width: 100%;
     margin-top: 15;
@@ -14,5 +15,81 @@
         border-color: rgba(0, 0, 0, 0.15);
         border-style: solid;
         border-radius: 3.2;
+    }
+}
+
+.search-category {
+    height: 56;
+    Label {
+        width: 56;
+        font-size: 25;
+        padding-left: $left-space;
+        padding-top: 15;
+        background-color: #f6f6f6;
+    }
+    TextField {
+        width: 100%;
+        background-color: #f6f6f6
+    }
+}
+
+.all-categories {
+    padding: $left-space;
+    width: 100%;
+    .icon {
+        background-color: #8e8e8e;
+        color: white;
+        padding: 5;
+        margin-right: 9;
+        border-radius: 3.2;
+    }
+    .text {
+        width: 100%;
+        vertical-align: center;
+    }
+}
+
+.categories {
+    padding: $left-space;
+    padding-top: 0;
+    .category-item {
+        background-color: #c92c2c;
+        margin: 5;
+        color: #ffffff;
+        height: 80;
+        vertical-align: center;
+        Label {
+            text-align: center;
+            overflow: unset;
+        }
+    }
+    .category-item.active {
+        background-color: #333333;
+    }
+}
+
+.order-list {
+    padding: $left-space;
+    @include adisyo-border('top', 0.1, solid, rgba(0, 0, 0, 0.15));
+    .order-item {
+        @include adisyo-border('all', 0.1, solid, rgba(0, 0, 0, 0.50));
+        border-radius: 3.2;
+        padding: $left-space;
+        margin-bottom: 10;
+        StackLayout {
+            min-height: 40;
+        }
+        label {
+            vertical-align: center;
+        }
+        .order-name {
+            font-weight: bold;
+            color: #de000000;
+            font-size: 14;
+        }
+        .order-count {
+            color: #ff9800;
+            font-weight: bold;
+        }
     }
 }

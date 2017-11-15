@@ -15,19 +15,71 @@
 
 <TabView>
     <StackLayout *tabItem="{title: 'MENÜ'}">
-        <StackLayout orientation="horizontal" style="height:56;">
-            <Label class="label fa" text="&#xf002;" style="width:56;font-size:25;padding-left:15;padding-top:15;background-color:#f6f6f6;"></Label>
-            <TextField class="input input-border" id="firstTextFieldId" hint="Kategori veya yemek ara" text="" style="width:100%;background-color:#f6f6f6"></TextField>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout orientation="vertical">
+                <StackLayout orientation="horizontal" class="search-category">
+                    <Label class="label fa" text="&#xf002;"></Label>
+                    <TextField class="input input-border" id="firstTextFieldId" hint="Kategori veya yemek ara" text=""></TextField>
+                </StackLayout>
 
-        <StackLayout orientation="vertical" style="padding:15">
-            <Label class="label fa" text="&#xf0c9; Tüm Kategoriler" style="width:100%;"></Label>
+                <StackLayout orientation="horizontal" class="all-categories">
+                    <Label class="label fa icon" text="&#xf0c9;"></Label>
+                    <Label class="label text" text="Tüm Kategoriler"></Label>
+                </StackLayout>
 
+                <StackLayout class="categories">
+                    <RadListView [items]="_categories">
+                        <ng-template tkListItemTemplate let-item="item">
+                            <StackLayout class="category-item" [ngClass]="{'active': item.isActive}">
+                                <label class="w-s-normal" [text]="item.name"></label>
+                            </StackLayout>
+                        </ng-template>
 
-        </StackLayout>
+                        <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" spanCount="2"></ListViewGridLayout>
+                    </RadListView>
+                </StackLayout>
 
+                <StackLayout class="order-list" orientation="vertical">
+                    <GridLayout rows="*" columns="*,*" class="order-item" verticalAlignment="center">
+                        <StackLayout row="0" col="0" orientation="horizontal" style="text-align:left;" horizontalAlignment="left">
+                            <label class="order-name w-s-normal">
+                                <FormattedString>
+                                    <Span text="Soya Soslu Adana Dürüm Deluxe" style="margin-right:5;"></Span>
+                                    <Span text=" ("></Span>
+                                    <Span text="41" style="color:#c92c2c;"></Span>
+                                    <Span text=")"></Span>
+                                </FormattedString>
+                            </label>
+                        </StackLayout>
+                        <StackLayout row="0" col="1" orientation="horizontal" style="text-align:right;" horizontalAlignment="right">
+                            <label style="color:#de000000;font-size:16;">
+                                <FormattedString>
+                                    <Span class="order-count" text="3"></Span>
+                                    <Span text=" * "></Span>
+                                    <Span text="45,00TL"></Span>
+                                </FormattedString>
+                            </label>
+                        </StackLayout>
+                    </GridLayout>
 
+                    <GridLayout rows="*" columns="*,*" class="order-item">
+                        <StackLayout row="0" col="0" orientation="horizontal" style="text-align:left;" horizontalAlignment="left">
+                            <label class="order-name w-s-normal">
+                                <FormattedString>
+                                    <Span text="Çift Lavaşlı Urfa Dürüm" style="margin-right:5;"></Span>
+                                </FormattedString>
+                            </label>
+                        </StackLayout>
+                        <StackLayout row="0" col="1" orientation="horizontal" style="text-align:right;" horizontalAlignment="right">
+                            <label style="font-size:16;">
+                                <FormattedString>
+                                    <Span text="45,00TL"></Span>
+                                </FormattedString>
+                            </label>
+                        </StackLayout>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
-
-
 </TabView>

@@ -3,6 +3,9 @@ import { PageRoute, RouterExtensions } from "nativescript-angular/router";
 import { RadListView } from "nativescript-pro-ui/listview";
 import { RadListViewComponent } from "nativescript-pro-ui/listview/angular";
 import "rxjs/add/operator/switchMap";
+import { CATEGORIES } from "./../shared/categories-mock";
+import { CategoryModel } from "./../shared/category.model";
+import { ProductModel } from "./../shared/product.model";
 import { Table } from "./../shared/table.model";
 import { TableService } from "./../shared/table.service";
 
@@ -21,7 +24,8 @@ import { TableService } from "./../shared/table.service";
 export class TableDetailComponent implements OnInit {
 
     private _table: Table = new Table();
-    private _categories: Array<string> = new Array();
+    private _categories: Array<CategoryModel> = new Array();
+    private _products: Array<ProductModel> = new Array();
 
     constructor(
         private _pageRoute: PageRoute,
@@ -40,12 +44,9 @@ export class TableDetailComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._categories.push("Dürümler");
-        this._categories.push("Şerbetli Tatlı Çeşitleri");
-        this._categories.push("Hızlı Servisler");
-        this._categories.push("İskenderler");
-        this._categories.push("Döner");
-        this._categories.push("Fırında Pişmiş Etler");
+        this._categories = CATEGORIES;
+
+        this._products = this._categories[0].products;
 
         this._pageRoute.activatedRoute
             .switchMap((activatedRoute) => activatedRoute.params)

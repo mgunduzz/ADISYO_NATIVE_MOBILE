@@ -3,6 +3,7 @@ import { Http } from "@angular/http";
 import { Observable } from "rxjs/Rx";
 
 import { Config } from "../../shared/config";
+import { Area } from "./area.model";
 import { Table } from "./table.model";
 
 const editableProperties = [
@@ -31,6 +32,7 @@ export class TableService {
     }
 
     private _tables: Array<Table> = [];
+    private _areas: Array<Area> = [];
 
     constructor(private _ngZone: NgZone) {
         this._tables.push({ id: 0, name: "Masa 1", status: 0 });
@@ -49,6 +51,10 @@ export class TableService {
         this._tables.push({ id: 13, name: "Masa 14", status: 0 });
         this._tables.push({ id: 14, name: "Masa 15", status: 2 });
         this._tables.push({ id: 15, name: "Masa 16", status: 2 });
+
+        this._areas.push({ id: 0, name: "Salon", tables: this._tables });
+        this._areas.push({ id: 1, name: "Kat 2", tables: this._tables });
+        this._areas.push({ id: 2, name: "Kat 3", tables: this._tables });
     }
 
     getTableById(id: number): Table {
@@ -66,6 +72,12 @@ export class TableService {
     load(): Observable<Array<Table>> {
         return new Observable((observer: any) => {
             observer.next(this._tables);
+        });
+    }
+
+    loadAreas(): Observable<Array<Area>> {
+        return new Observable((observer: any) => {
+            observer.next(this._areas);
         });
     }
 }

@@ -1,6 +1,7 @@
 import { style } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
+import { Area } from "./shared/area.model";
 import { Table } from "./shared/table.model";
 import { TableService } from "./shared/table.service";
 
@@ -19,6 +20,7 @@ import { TableService } from "./shared/table.service";
 })
 export class TableListComponent implements OnInit {
     tables: Array<Table> = new Array();
+    areas: Array<Area> = new Array();
 
     constructor(
         private _routerExtensions: RouterExtensions,
@@ -43,12 +45,12 @@ export class TableListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._tableService.load().subscribe((tables) => {
-            this.tables = tables;
+        this._tableService.loadAreas().subscribe((areas) => {
+            this.areas = areas;
 
-            // setTimeout(() => {
-            //     this.onTableItemTap({ id: 0, name: "", status: 0 });
-            // }, 10);
+            setTimeout(() => {
+                this.onTableItemTap(this.areas[0].tables[0]);
+            }, 100);
         });
     }
 }

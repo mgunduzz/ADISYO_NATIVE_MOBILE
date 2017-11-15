@@ -1,10 +1,10 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
-
 //Font icon
 .fa {
-   font-family: "FontAwesome";
+    font-family: "FontAwesome";
 }
+
 //Action bar
 .action-item,
 NavigationButton {
@@ -16,8 +16,8 @@ NavigationButton {
 }
 
 Slider {
-  background-color: $accent;
-  color: $accent;  
+    background-color: $accent;
+    color: $accent;
 }
 
 .text {
@@ -34,4 +34,8 @@ Slider {
 
 .btn-adisyo-primary {
     background-color: #c92c2c;
+}
+
+.w-s-normal {
+    white-space: normal;
 }
